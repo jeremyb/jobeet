@@ -47,3 +47,7 @@ Or just accessing `config.php` in a browser and follow the instructions.
 
     php app/console doctrine:database:create
     php app/console doctrine:schema:create
+
+#### Load data fixtures
+
+    php app/console doctrine:data:load
