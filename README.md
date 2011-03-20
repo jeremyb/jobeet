@@ -15,59 +15,30 @@ It's not finished, far from it. It's still a work in progress. It's based on
 Symfony Standard Edition PR7, and I will be updating vendors as new releases come
 out.
 
-What's inside?
---------------
+## Install
 
-Symfony Standard Edition comes pre-configured with the following bundles:
+### Get the code
 
- * FrameworkBundle
- * SensioFrameworkExtraBundle
- * DoctrineBundle
- * TwigBundle
- * SwiftmailerBundle
- * ZendBundle
- * AsseticBundle
- * WebProfilerBundle (in dev/test env)
- * SymfonyWebConfiguratorBundle (in dev/test env)
- * AcmeDemoBundle (in dev/test env)
+    git clone git://github.com/symfonytuts/jobeet.git
+    cd jobeet
+    git submodule update --init --recursive
 
-Added by SymfonyTuts
---------------------
- * AcmeJobeetBundle to follow the tutorial on symfonytuts.com
+The last command requires Git >= 1.6. Alternatively, you can run `git submodule init` and `git submodule update`.
 
-Installation
-------------
+### Configure
 
-clone this repo, and place it somewhere your web server root directory.
+The configuration is very similar to "Symfony Standard Edition" distribution.
 
- * `app/console assets:install web/`
+You need to build the Symfony bootstrap:
 
-Configuration
--------------
+    ./bin/build_bootstrap.php
 
-Check that everything is working fine by going to the `web/config.php` page in a
-browser and follow the instructions.
+And to install the assets:
 
-The distribution is configured with the following defaults:
+    app/console assets:install --symlink web/
 
- * Twig is the only configured template engine;
- * Doctrine ORM/DBAL is configured;
- * Swiftmailer is configured;
- * Annotations for everything are enabled.
+To configure your database settings, you can edit the `parameters.ini` file:
 
-A default bundle, `AcmeDemoBundle`, shows you Symfony2 in action. It's only
-available in the `dev` environment. After playing with it, you can remove it
-by deleting the `src/Acme` directory and removing the routing entry in
-`app/config/routing_dev.yml`.
+    cp app/config/parameters.ini.dist app/config/parameters.ini
 
-Configure the distribution by editing `app/config/parameters.ini` or by
-accessing `/web/config.php` in a browser.
-
-A simple controller is configured at `/hello/{name}`. Access it via
-`web/app_dev.php/_demo/hello/Fabien`.
-
-If you want to use the CLI, a console application is available at
-`app/console`. Check first that your PHP is correctly configured for the CLI
-by running `app/check.php`.
-
-Enjoy!
+Or just accessing `config.php` in a browser and follow the instructions.

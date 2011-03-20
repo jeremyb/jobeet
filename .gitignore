@@ -4,5 +4,5 @@ app/config/parameters.ini
 app/cache/*
 app/logs/*
 build/
-/bin/
 /web/images/*
+.DS_Store
