@@ -42,3 +42,8 @@ To configure your database settings, you can edit the `parameters.ini` file:
     cp app/config/parameters.ini.dist app/config/parameters.ini
 
 Or just accessing `config.php` in a browser and follow the instructions.
+
+#### Create database and tables
+
+    php app/console doctrine:database:create
+    php app/console doctrine:schema:create
